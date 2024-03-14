@@ -1,0 +1,6 @@
+23 + 41 = 64, Sua resposta: 0
+17 + 71 = 88, Sua resposta: 0
+95 + 84 = 179, Sua resposta: 0
+39 + 23 = 62, Sua resposta: 0
+38 + 36 = 74, Sua resposta: 0
+Você acertou 0 Questões!

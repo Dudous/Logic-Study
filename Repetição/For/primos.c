@@ -9,13 +9,16 @@ int main()
 
     printf("Digite ate qual valor deseja visualizar os numeros primos: ");
     scanf("%d", &user);
-
+    
     for(int i = 2; i <= user; i++){
         primo = 1;
         for(int j = 2; j <= sqrt(i); j++){
             result = i % j;
-            if(result == 0)
-                primo = 0;
+            if(result == 0){
+                primo = 0; 
+                break;
+
+            }
         }
         if(primo == 1)
         {

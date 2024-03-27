@@ -3,8 +3,6 @@
 #include <string.h>
 #include <time.h>
 
-#define Tentativas 7
-
 void Boneco(int tentativas){
     char boneco[7][20] = {"|   O ", "\n|   |", "\b\b/", "|\\ \n|", "\b|  / ", "\\"};
 
@@ -36,41 +34,41 @@ void Palpite(char palpite[7]){
 
 int main() {
     char letter, palpite[7] = "______";
-    int correct, erros = 0;
+    int correct, erros = 0, acertos = 0;
 
     char *palavra = Palavra();
-    // for(int j= 0;j<= 7;j++){
-    //         printf("%c\n", palavra[j]);
-    // }
 
-    printf("%s\n\n", palavra);
-    
-
-    for (int i = 0; i < Tentativas; i++)
+    while((erros < 6) & (acertos < 6))
     {
         Boneco(erros);
 
         printf("\n\n");
 
         Palpite(palpite);
-
+		
+		fflush(stdin);
+		
         printf("\n\nDigite uma Letra:");
-        scanf("%s", &letter);
-        
+        scanf("%c", &letter);
+
         correct = 0;
 
         for(int j= 0;j<= 6;j++){
-            printf("%c\n", palavra[j]);
-            if(letter == palavra[j])
-            {
-                palpite[j] = letter;
-                correct = 1;
-            }
+           if(letter == palavra[j])
+           {
+               palpite[j] = letter;
+               correct = 1;
+               acertos++;
+           }
         }
 
         if (correct == 0){
             erros++;
         }
     }
-    
+
+    if(erros == 6)
+        printf("Voce Perdeu :(");
+    else
+        printf("Voce Ganhou :)");
 }

@@ -1,0 +1,7 @@
+-------- Extrato Bancário --------
+
+Deposito efetuado no Valor de 100.00
+Saldo: 100.00
+
+Pagamento Efetuado no Valor de 50.00
+Saldo: 50.00

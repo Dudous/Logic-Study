@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "banco.h": "c"
+        "banco.h": "c",
+        "IANES.C": "cpp"
     }
 }

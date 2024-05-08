@@ -63,7 +63,18 @@ int main()
     fprintf(arquivo, "Cargo: %s\n", funcionario.cargo);
     fprintf(arquivo, "Salario: %.2f\n", funcionario.salario);
 
+    fclose(arquivo);
 
+    arquivo = fopen("Funcionario.txt", "r");
 
-
+    char ch;
+    
+    do
+    {
+        ch = getc(arquivo);
+        printf("%c", ch);
+        
+    } while (ch != EOF);
+    
+    fclose(arquivo);
 }

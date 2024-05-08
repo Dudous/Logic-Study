@@ -1,8 +1,8 @@
 Nome: jao
 Idade: 20
 Sexo: M
-CPF: 12345678950
-Data de Nascimento: 10
-Setor: 50
-Cargo: Ajustador Mecanico
-Salario: 2050.30
+CPF: 12345678980
+Data de Nascimento: 19
+Setor: 5
+Cargo: Pogramador
+Salario: 500.63

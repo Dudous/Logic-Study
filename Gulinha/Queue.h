@@ -22,9 +22,7 @@ void enqueue(Queue * fila, int value)
 {
     realloc(fila->array, fila->size +1 * sizeof(int));
 
-    fila->array[fila->size] = value;
-
-    fila->size++;
+    fila->array[fila->size++] = value;
 }
 
 int dequeue(Queue * fila)
@@ -41,9 +39,11 @@ int dequeue(Queue * fila)
     return aux;
 }
 
-int size(Queue * fila)
+void removeQUeue(Queue * fila)
 {
-    return fila->size;
+    fila->array[fila->size - 1] = NULL;
+
+    fila->size--;
 }
 
 #endif

@@ -35,8 +35,6 @@ int main()
 
     for (int i = 0; i < 2; i++)
     {
-        int media = (alunos[i].nota1 + alunos[i].nota2)/3;
-
         printf("\nAluno %d\n\n", i+1);
         printf("Nome: %s\n", alunos[i].nome);
         printf("Codigo disciplina: %d\n", alunos[i].disciplina);

@@ -41,5 +41,9 @@ int dequeue(Queue * fila)
     return aux;
 }
 
+int size(Queue * fila)
+{
+    return fila->size;
+}
 
 #endif

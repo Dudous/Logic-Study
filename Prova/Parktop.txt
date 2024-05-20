@@ -1,0 +1,29 @@
+====PARKTOP====
+
+Veiculo
+Modelo: fiesta
+Marca: ford
+Ano: 2007
+Placa: app2h
+Cor: preto
+
+Proprietario
+Nome: dudu sampa
+Idade: 20 Anos
+
+
+Veiculo
+Modelo: Onix
+Marca: Chevrolet
+Ano: 2015
+Placa: jkl1902
+Cor: Branco
+
+Proprietario
+Nome: Matias Zuniga
+Idade: 18 Anos
+
+
+
+
+Data: Mon May 20 15:04:38 2024

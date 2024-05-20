@@ -15,16 +15,13 @@ void Sort(int * Lista, int Start, int End)
             Lista[i] = Lista[j];
             Lista[j] = Temp;
             ++i;
-            for(int x = 0; x < 16; ++x)
-            {
-                printf("%i, ", Lista[x]);
-            }
-            printf("\n");
         }
     }
+    //Troca o item do 
     int Temp = Lista[i];
     Lista[i] = Lista[End];
     Lista[End] = Temp;
+
     for(int x = 0; x < 16; ++x)
     {
         printf("%i, ", Lista[x]);

@@ -29,7 +29,7 @@ Veiculo * removeFirst(Veiculo * p)
     
 }
 
-int main(void)
+int main()
 {
     Veiculo *pNode1;
     Veiculo *pNode2;

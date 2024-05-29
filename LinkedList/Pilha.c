@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include "LinkedList.h"
 
-// void push(LinkedList * list, int value)
-// {
-//     add(list, value);
-// }
+void push(LinkedList * list, int value)
+{
+    addlist(list, value);
+}
 
 // int pop(LinkedList * list)
 // {
@@ -20,16 +20,16 @@
 
 int main()
 {
-    LinkedList list = LinkedListConstructor();
+    LinkedList * list = LinkedListConstructor();
 
-    addlist(&list, 1);
-    addlist(&list, 2);
-    addlist(&list, 3);
-    addlist(&list, 4);
+    push(list, 1);
+    push(list, 2);
+    push(list, 3);
+    push(list, 4);
 
-    // for (int i = 0; i < 4; i++)
-    // {
-    //     printf("Pop %d = %d", i, pop(list));
-    // }
+    for (int i = 0; i < 4; i++)
+    {
+        printf("\nPop %d = %d", i, removeList(list, list->size -1));
+    }
 
 }

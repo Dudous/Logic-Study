@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <stdio.h>
 #ifndef LinkedList_H
 #define LinkedList_H
 
@@ -14,12 +16,13 @@ typedef struct LinkedList
 }LinkedList;
 
 
-LinkedList LinkedListConstructor()
+LinkedList * LinkedListConstructor()
 {
-    LinkedList new_linked;
+    LinkedList * new_linked = malloc(sizeof(LinkedList));
 
-    new_linked.head = NULL;
-    new_linked.size = 0;
+    new_linked->head = NULL;
+    new_linked->size = 0;
+
     return new_linked;
 }
 
@@ -27,8 +30,11 @@ LinkedList LinkedListConstructor()
 void addlist(LinkedList *list, int value)
 {
     list->size++;
-    NodeList *node;
+    NodeList *node = malloc(sizeof(NodeList));
     node->value = value;
+    node->next = NULL;
+
+    printf("\n%d", node->value);
 
     if(!list->head)
     {
@@ -38,8 +44,9 @@ void addlist(LinkedList *list, int value)
 
     NodeList* iterator = list->head;
 
-    while(!iterator->next)
+    while(iterator->next == NULL)
     {
+        printf("\nteste");
         iterator = iterator->next;
     }
 
@@ -48,27 +55,27 @@ void addlist(LinkedList *list, int value)
     return;
 }
 
-// int removeList(LinkedList list, int index)
-// {
-//     if(index >= size)
-//         return NULL;
+int removeList(LinkedList * list, int index)
+{
+    if(index >= list->size)
+        return 0;
     
-//     size--;
+    list->size--;
 
-//     NodeList iterator = list.head;
+    NodeList * iterator = list->head;
 
-//     for (int i = 1; i < index; i++)
-//     {
-//         iterator = iterator.next;
-//     }
+    for (int i = 1; i < index; i++)
+    {
+        printf("\n%d", iterator->value);
+        iterator = iterator->next;
+    }
     
-//     NodeList aux = iterator;
-//     aux = iterator.next;
+    NodeList * aux = iterator->next;
 
-//     iterator.next = aux.next;
+    iterator->next = aux->next;
 
-//     return aux.value;
-// }
+    return aux->value;
+}
 
 // int getList(LinkedList list, int index)
 // {

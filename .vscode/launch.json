@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Aluno/Desktop/C/AgendaTelefonica",
-      "program": "c:/Users/Aluno/Desktop/C/AgendaTelefonica/build/Debug/outDebug",
+      "cwd": "c:/Users/Aluno/Desktop/C/LinkedList",
+      "program": "c:/Users/Aluno/Desktop/C/LinkedList/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

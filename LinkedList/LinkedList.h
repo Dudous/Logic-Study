@@ -24,25 +24,26 @@ LinkedList LinkedListConstructor()
 }
 
 
-void addlist(LinkedList list, int value)
+void addlist(LinkedList *list, int value)
 {
-    list.size++;
-    NodeList node;
-    node.value = value;
+    list->size++;
+    NodeList *node;
+    node->value = value;
 
-    if(!list.head)
+    if(!list->head)
     {
-        list.head = node;
+        list->head = node;
         return;
     }
 
-    NodeList iterator = list.head;
-    while(!iterator.next)
+    NodeList* iterator = list->head;
+
+    while(!iterator->next)
     {
-        iterator = iterator.next;
+        iterator = iterator->next;
     }
 
-    iterator.next = node;
+    iterator->next = node;
 
     return;
 }

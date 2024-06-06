@@ -22,17 +22,17 @@ int main()
 {
     LinkedList * list = LinkedListConstructor();
 
-    push(list, 1);
-    push(list, 2);
-    push(list, 3);
-    push(list, 4);
+    push(stack, 1);
+    push(stack, 2);
+    push(stack, 3);
+    push(stack, 4);
 
 
-    printf("\nGET %d",peek(list));
+    printf("\nGET %d",peek(stack));
 
     for (int i = 0; i < 4; i++)
     {
-        printf("\nPop %d",pop(list));
+        printf("\nPop %d",pop(stack));
     }
 
 }

@@ -1,17 +1,19 @@
 #include <stdlib.h>
-#include <stdio.h>
 #ifndef LinkedList_H
 #define LinkedList_H
+
+typedef struct NodeList NodeList;
 
 typedef struct NodeList
 {
     int value;
-    struct NodeList *next;
+    NodeList *next;
 }NodeList;
 
 typedef struct LinkedList
 {
     NodeList *head;
+    NodeList *tail;
     int size;
 }LinkedList;
 
@@ -34,23 +36,15 @@ void addlist(LinkedList *list, int value)
     node->value = value;
     node->next = NULL;
 
-    printf("\n%d", node->value);
-
     if(!list->head)
     {
         list->head = node;
+        list->tail = node;
         return;
     }
 
-    NodeList* iterator = list->head;
-
-    while(iterator->next == NULL)
-    {
-        printf("\nteste");
-        iterator = iterator->next;
-    }
-
-    iterator->next = node;
+    list->tail->next = node;
+    list->tail = list->tail->next;
 
     return;
 }
@@ -58,38 +52,50 @@ void addlist(LinkedList *list, int value)
 int removeList(LinkedList * list, int index)
 {
     if(index >= list->size)
-        return 0;
+        return NULL;
     
     list->size--;
+
+    NodeList * aux;
+
+    if(index == 0)
+    {
+        aux = list->head;
+
+        if(list->size == 1)
+            list->head = NULL;
+        else
+            list->head = list->head->next;
+        return aux->value;
+    }
 
     NodeList * iterator = list->head;
 
     for (int i = 1; i < index; i++)
     {
-        printf("\n%d", iterator->value);
         iterator = iterator->next;
     }
-    
-    NodeList * aux = iterator->next;
+
+    aux = iterator->next;
 
     iterator->next = aux->next;
 
     return aux->value;
 }
 
-// int getList(LinkedList list, int index)
-// {
-//     if(index >= size)
-//         return NULL;
+int getList(LinkedList* list, int index)
+{
+    if(index >= list->size)
+        return NULL;
     
-//     NodeList iterator = list.head;
+    NodeList * iterator = list->head;
 
-//     for (int i = 1; i <= index; i++)
-//     {
-//         iterator = iterator.next;
-//     }
+    for (int i = 0; i < index; i++)
+    {
+        iterator = iterator->next;
+    }
 
-//     return iterator.value;
-// }
+    return iterator->value;
+}
 
 #endif // !LinkedList

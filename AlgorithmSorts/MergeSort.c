@@ -24,7 +24,7 @@ void MergeSort(int * array, int start, int end)
     while (pace <= end)
     {
 
-        if(array[first] < array[second] && first <= mid|| second > end)
+        if(array[first] < array[second] && first <= mid || second > end)
         {
             copy[pace] = array[first];
             first++;

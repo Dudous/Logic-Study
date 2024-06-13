@@ -1,29 +1,35 @@
 #include <stdio.h>
-#include <stdlib.h>
-
-void InsertionSort(int * array, int size)
+void QuickSort(int * P, int Start, int End)
 {
-    int aux;
+    if(Start >= End)
+        return;
 
-    for(int i = 0; i < size; i++){
-        for (int j = 0; j + 1 < size - i; j++)
+    int Pivot = P[End];
+    int i = Start;
+  
+    for(int j = Start; j <= End; ++j)
+    {
+        if(P[j] < Pivot)
         {
-            if(array[j] > array[j + 1])
-            {
-                aux = array[j];
-                array[j] = array[j + 1];
-                array[j + 1] = aux;
-            }
+            int aux = P[i];
+            P[i] = P[j];
+            P[j] = aux;
+            ++i;
         }
     }
     
-}
+    int aux = P[i];
+    P[i] = P[End];
+    P[End] = aux;
 
+    QuickSort(P, Start, i - 1);
+    QuickSort(P, i + 1, End);
+}
 
 int main()
 {
     int A[10000] = 
-{
+    {
     1828, 1240, 3218, 3030,  303, 2823, 3584, 9090,  558, 4527,
     2013, 1006, 4425, 9859, 6547, 1907, 7400, 3132, 8180, 6678,
     7556, 4303, 8124, 1338, 5591,  921, 4002, 8291,  434, 1565,
@@ -1024,17 +1030,16 @@ int main()
     5714, 1858, 8827, 7430, 3939, 5385, 3712, 6204, 9102, 4736,
     2052,  962, 9005, 9455, 3220, 5307, 6595,  514, 7257, 3191,
     5690, 2721,  801, 5652, 8114,   30, 5648, 4110, 8502, 9502
-};
+    };
 
     int size = sizeof(A)/sizeof(A[0]);
 
-    InsertionSort(A, size);
+    QuickSort(A, 0, size);
 
     printf("\n");
 
     for (int i = 0; i < size; i++)
     {
-        printf("\t%d", A[i]);
+        printf("\t %d", A[i]);
     }
-    
 }

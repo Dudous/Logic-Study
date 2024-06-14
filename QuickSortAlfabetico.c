@@ -1,46 +1,93 @@
 #include <stdio.h>
-void Sort(int * Lista, int Start, int End)
+#include <string.h>
+#include <ctype.h>
+
+#define TAM 7
+
+
+void Sort(char array[][TAM], int Start, int End)
 {
     if(Start >= End)
         return;
 
-    int Pivot = Lista[End]; //Pivot para o final
-    int i = Start; // Contador para o Inicio
+    char Pivot[TAM], aux[TAM]; //Pivot para o final
+
+    strcpy(Pivot, array[End]);
+
+    int cont = Start; // Contador para o Inicio
   
     for(int j = Start; j <= End; ++j)
     {
-        if(Lista[j]<Pivot)
-        {
-            int Temp = Lista[i];
-            Lista[i] = Lista[j];
-            Lista[j] = Temp;
-            ++i;
-        }
+        if(array[j] > 47 && array[j] < 58)
+            if(array[j]-'0' < Pivot)
+            {
+                strcpy(aux, array[cont]);
+                strcpy(array[cont], array[j]);
+                strcpy(array[j], aux);
+                cont++;
+            }
+        else
+            if(strcmp(array[j], Pivot) < 0)
+            {
+                strcpy(aux, array[cont]);
+                strcpy(array[cont], array[j]);
+                strcpy(array[j], aux);
+                cont++;
+                
+            }
     }
-    //Troca o item do 
-    int Temp = Lista[i];
-    Lista[i] = Lista[End];
-    Lista[End] = Temp;
 
-    for(int x = 0; x < 16; ++x)
+    //Posiciona o Pivot
+    strcpy(aux, array[cont]);
+    strcpy(array[cont], array[End]);
+    strcpy(array[End], aux);
+
+    Sort(array, Start, cont - 1);
+    Sort(array, cont + 1, End);
+    
+    printf("\n\n\n");
+    for(int i = 0; i < 5; ++i)
     {
-        printf("%i, ", Lista[x]);
+        printf("%d, ", array[i][0]);
     }
-    printf("\n");
+}
 
-    Sort(Lista, Start, i - 1);
-    Sort(Lista, i + 1, End);
+void QuickSort(char array[][TAM], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; array[i][j]; j++)
+        {
+            array[i][j] = tolower(array[i][j]);
+        }
+        
+    }
+
+    for(int i = 0; i < 5; ++i)
+    {
+        printf("%s, ", array[i][0]);
+    }
+
+        // printf("\n\n");
+    // Sort(array, 0, size);
+    
 }
 
 int main()
 {
-    int A[16] = 
+    char A[17][TAM] = 
     {
-        2, 3, 5, 6, 8, 9, 10, 12, 13, 7, 16, 1, 14, 4, 15, 11
+        "98", "11","12","horara","zzzzzz"
     };
-    Sort(A, 0, 15);
-    for(int i = 0; i < 16; ++i)
+
+    int size = sizeof(A)/ sizeof(A[0]);
+
+    Sort(A, 0, 16);
+
+    printf("\n\n\n");
+    for(int i = 0; i < 5; ++i)
     {
-        printf("%i, ", A[i]);
+        printf("%s, ", A[i]);
     }
+
 }

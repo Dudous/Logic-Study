@@ -1,7 +1,8 @@
 {
   "files.associations": {
     "banco.h": "c",
-    "IANES.C": "cpp"
+    "IANES.C": "cpp",
+    "array": "c"
   },
   "C_Cpp.errorSquiggles": "disabled",
   "C_Cpp_Runner.cCompilerPath": "gcc",

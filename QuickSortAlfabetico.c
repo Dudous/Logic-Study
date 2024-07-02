@@ -76,7 +76,7 @@ int main()
 {
     char A[17][TAM] = 
     {
-        "98", "11","12","horara","zzzzzz"
+        "98", "11","12","horara","zzzzz"
     };
 
     int size = sizeof(A)/ sizeof(A[0]);

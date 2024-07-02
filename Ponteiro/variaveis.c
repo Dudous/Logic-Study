@@ -7,14 +7,6 @@ void Troca(void *a, float *b, char *c)
     *troca = *a; 
 
     *a = *troca;
-    
-//     *troca = *b; 
-
-//     *b = *troca;
-    
-//     *troca = *c; 
-
-//     *c = *troca;
  }
 
 

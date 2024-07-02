@@ -4,7 +4,6 @@
 
 #define TAM 7
 
-
 void Sort(char array[][TAM], int Start, int End)
 {
     if(Start >= End)

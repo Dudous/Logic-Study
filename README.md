@@ -1,1 +1,1 @@
-Estudos de Lógica de Programação utiliando da Linguagem C
+Estudos de Lógica de Programação utilizando Linguagem C

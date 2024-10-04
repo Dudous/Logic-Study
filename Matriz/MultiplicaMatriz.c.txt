@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+int main()
+{
+    int lm1, lm2, cm1, cm2;
+    
+    printf("Linhas Matriz 1:");
+    scanf(" %d", &lm1);
+    printf("Colunas Matriz 1:");
+    scanf(" %d", &cm1);
+    
+    int matriz1[lm1][cm1];
+    
+    for(int i = 0; i < lm1; i++){
+        for(int j = 0; j < cm1; j++){
+            printf("\n (A)%d%d: ", i+1, j+1);
+            scanf("%d", &matriz1[i][j]);
+        }
+    }
+    
+    printf("Linhas Matriz 2:");
+    scanf(" %d", &lm2);
+    printf("Colunas Matriz 2:");
+    scanf(" %d", &cm2);
+    
+    if(cm1 != lm2){
+        printf("Impossível");
+        return 0;
+    }
+    
+    int matriz2[lm2][cm2];
+    
+    for(int i = 0; i < lm2; i++){
+        for(int j = 0; j < cm2; j++){
+            printf("\n (B)%d%d: ", i+1, j+1);
+            scanf(" %d", &matriz2[i][j]);
+        }
+    }
+    
+    
+    int matrizResult[cm1][lm2];
+    
+    for(int i = 0; i < lm1; i++){
+        for(int j = 0; j < cm2; j++){
+            for(int k = 0; k < cm1; k++){
+                matrizResult[i][j] += matriz1[i][k] * matriz2[k][j];
+            }
+            
+        }
+    }
+    printf("\n-- MULTIPLICAÇÃO DAS MATRIZES --");
+    
+    for(int i = 0; i < lm1; i++){
+        for(int j = 0; j < cm2; j++){
+            printf(" %d ", matrizResult[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
